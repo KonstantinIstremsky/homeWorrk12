@@ -1,15 +1,20 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Author author1 = new Author("Leo", "Tolstoy");
+        Author author2 = new Author("Ernest", "Hemingway");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Book book1 = new Book("War and Peace", author1, 1869);
+        Book book2 = new Book("The Old Man and the Sea", author2, 1952);
+
+        // Инфо о книгах
+        System.out.println("Book: " + book1.getTitle() + ", Author: " + book1.getAuthor().getFirstName() + " "
+                + book1.getAuthor().getLastName() + ", Year: " + book1.getPublicationYear());
+
+        System.out.println("Book: " + book2.getTitle() + ", Author: " + book2.getAuthor().getFirstName() + " "
+                + book2.getAuthor().getLastName() + ", Year: " + book2.getPublicationYear());
+
+        // Изменяем год публикации
+        book1.setPublicationYear(1873);
+        System.out.println("Updated publication year for book " + book1.getTitle() + ": " + book1.getPublicationYear());
     }
 }
